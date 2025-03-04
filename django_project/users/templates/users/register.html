@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}  <!-- Extend your base template -->
+{% load crispy_forms_tags %}  <!-- Load crispy forms tags -->
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Register</h3>
+                </div>
+                <div class="card-body">
+                    <!-- Registration Form -->
+                    <form method="post" class="needs-validation" novalidate>
+                        {% csrf_token %}  <!-- CSRF token for security -->
+
+                        <!-- Render the form using crispy forms -->
+                        {{ form|crispy }}
+
+                        <!-- Submit Button -->
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <p class="mb-0">Already have an account? <a href="#">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
