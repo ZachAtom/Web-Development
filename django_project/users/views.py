@@ -2,8 +2,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib import messages
-from .forms import UserUpdateForm, ProfileUpdateForm
+from .forms import UserUpdateForm, ProfileUpdateForm, CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
+
 
 def register(request):
     if request.method == 'POST':
